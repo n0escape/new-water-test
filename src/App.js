@@ -13,8 +13,8 @@ import ScrollToHash from './utils/scrollToHash.js';
 import ScrollToTop from './components/general/ScrollToTop/ScrollToTop.jsx';
 import { useEffect, useState } from 'react';
 
-export const basePath = process.env.NODE_ENV === 'development' ? '/' : '/my-site/projects/water-well-project-react/build';
-export const basePathData = process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL : '/my-site/projects/water-well-project-react/build';
+export const basePath = process.env.NODE_ENV === 'development' ? '/' : '/new-water-test/';
+export const basePathData = process.env.NODE_ENV === 'development' ? process.env.PUBLIC_URL : '/new-water-test/';
 
 const App = () => {
 
