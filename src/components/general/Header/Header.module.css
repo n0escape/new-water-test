@@ -1,0 +1,91 @@
+/*Header General*/
+#pageHeader {
+    top: 0;
+    max-width: 100vw;
+    max-height: 100px;
+    background-color: lightgray;
+    position: sticky;
+    z-index: 1000000;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    gap: 10px;
+}
+/*Header Logo*/
+.container > .logo {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo a img {
+    width: 70px;
+}
+/*Header Links*/
+.nav {
+    flex-grow: 6;
+}
+.hiddenMenu {
+    display: none;
+    font-size: larger;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+/*Contacts Block*/
+.contactsBlock {
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.schedule > p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* 
+@media (max-width: 950px) {
+    #pageHeader .container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 6fr 2fr;
+    }
+    #pageHeader .container .hiddenMenu {
+        display: flex;
+    }
+    #pageHeader .container .links {
+        display: none;
+    }
+    #pageHeader .container .links ul {
+        flex-direction: column;
+    }
+}
+@media (max-width: 730px) {
+    #pageHeader .container .logo a, #pageHeader .container .logo a img {
+        width: 55px;
+    }
+    #pageHeader {
+        height: 60px;
+    }
+}
+@media (max-width: 580px) {
+    #pageHeader {
+        height: 60px;
+    }
+    #pageHeader .container .configs .hiddenLanguageBox{
+        top: 60px;
+        right: 5px;
+    }
+    #pageHeader .container .configs img{
+        width: 20px;
+    }
+} 
+*/

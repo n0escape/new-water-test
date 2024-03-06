@@ -1,0 +1,24 @@
+.smList {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.smList img {
+    width: 40px;
+}
+
+.contacts {
+    justify-content: flex-end;
+}
+.contacts img {
+    width: 40px;
+}
+
+.footer {
+    justify-content: flex-start;
+}
+.footer img {
+    width: 32px;
+}

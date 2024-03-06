@@ -1,3 +1,4 @@
+import s from './ContactForm.module.css';
 import React, { useState } from 'react';
 
 // Функция для валидации адреса электронной почты
@@ -95,7 +96,7 @@ const ContactForm = ({ servicesList, selectedService = null }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={s.container}>
       <label htmlFor="name">Name:</label>
       <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required /> 
       {errors.name && <span style={{ color: 'red' }}>{errors.name}</span>}

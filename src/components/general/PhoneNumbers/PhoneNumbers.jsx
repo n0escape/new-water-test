@@ -1,4 +1,4 @@
-import './PhoneNumbers.css';
+import s from './PhoneNumbers.module.css';
 import React from 'react';
 
 const PhoneNumbers = ({phoneNumbersList}) => {
@@ -12,7 +12,7 @@ const PhoneNumbers = ({phoneNumbersList}) => {
   }
 
   return (
-    <ul>
+    <ul className={s.numbersList}>
       {phoneNumbersList.map( (phone, index) => (
         <li key={index}>
           <a href={`tel:${phone}`} target="_blank" rel="noopener noreferrer">

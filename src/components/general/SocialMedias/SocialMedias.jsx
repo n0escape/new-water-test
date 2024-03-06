@@ -1,13 +1,18 @@
-import './SocialMedias.css';
+import classNames from 'classnames';
+import s from './SocialMedias.module.css';
 import React from 'react';
 
-const SocialMedias = ({socialMediasList}) => {
+const SocialMedias = ({context, socialMediasList}) => {
+  const listClass = classNames(s.smList, {
+    [s.contacts]: context === 'contacts',
+    [s.footer]: context === 'footer',
+  });
   return (
-    <ul>
+    <ul className={listClass}>
       {socialMediasList.map( contact => (
         <li key={contact.id}>
           <a href={`https://${contact.url}`} target="_blank" rel="noopener noreferrer">
-            <img src={process.env.PUBLIC_URL + contact.src} alt={contact.id} style={{height: 40 + "px"}}/>
+            <img src={process.env.PUBLIC_URL + contact.src} alt={contact.id}/>
           </a>
         </li>
       ))}

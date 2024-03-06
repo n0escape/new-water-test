@@ -1,0 +1,23 @@
+.worksContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+.workItem {
+    display: flex;
+    flex-direction: column;
+}
+.workItem hr {
+    border-width: 3px;
+    width: 100%;
+}
+.workItemContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.itemDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

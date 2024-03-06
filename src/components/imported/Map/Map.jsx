@@ -1,4 +1,4 @@
-import './Map.css'
+import s from './Map.module.css'
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -31,7 +31,7 @@ const startPositionWorks = [49.0, 31.0]; // Начальное положени�
 
 const MapTemplate = ({startPos, zoomSize, heightContainer, widthContainer, markers}) => {
   return ( 
-    <div className="containerMap">
+    <div className={s.containerMap}>
       {/* Убедитесь, что установлены высота и ширина контейнера карты, иначе карта не будет отображаться */}
       <MapContainer center={startPos} zoom={zoomSize} style={{height: heightContainer, width: widthContainer}} placeholder={<MapPlaceholder />}>
         <TileLayer
@@ -59,7 +59,7 @@ const MapFrame = ({content, markers}) => {
     case 'office':
     return <MapTemplate startPos={markers[0].location} zoomSize={13} heightContainer={'400px'} widthContainer={'40vw'} markers={markers}/>
     case 'works': 
-    return <MapTemplate startPos={startPositionWorks} zoomSize={5} heightContainer={'400px'} widthContainer={'90vw'} markers={markers}/>
+    return <MapTemplate startPos={startPositionWorks} zoomSize={5} heightContainer={'400px'} widthContainer={'80vw'} markers={markers}/>
     default: 
     return <div>Error: wrong content param in mapFrame</div>;
   }
