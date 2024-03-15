@@ -36,6 +36,12 @@
         "/assets/srevices/pump-installation/Media2.png",
         "/assets/srevices/pump-installation/Media3.png"
       ],
+      "priceExplanation": [
+        {"title": "Робота:", "price": "700грн"},
+        {"title": "Прилад:", "price": "1500грн"},
+        {"title": "Додаткові інструменти:", "price": "300грн"},
+        {"title": "Витрати на шлях:", "price": "200грн"}
+      ],
       "whatYouWillGet": [
         "some text point",
         "some text point",
@@ -52,6 +58,11 @@
         "/assets/srevices/drilling-of-the-wells/Media1.png",
         "/assets/srevices/drilling-of-the-wells/Media2.png",
         "/assets/srevices/drilling-of-the-wells/Media3.png"
+      ],
+      "priceExplanation": [
+        {"title": "Робота:", "price": "1000грн"},
+        {"title": "Додаткові інструменти:", "price": "500грн"},
+        {"title": "Витрати на шлях:", "price": "200грн"}
       ],
       "whatYouWillGet": [
         "some text point",

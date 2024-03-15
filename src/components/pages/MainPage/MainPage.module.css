@@ -37,7 +37,7 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    padding: 85px 100px;
+    padding: 25px 100px;
 }
 #aboutUs:after {
     display: block;

@@ -6,27 +6,28 @@
     background-color: lightgray;
     position: sticky;
     z-index: 1000000;
+    padding: 0 60px;
 }
 .container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
-    gap: 10px;
 }
 /*Header Logo*/
 .container > .logo {
-    flex-grow: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 .logo a img {
     width: 70px;
 }
 /*Header Links*/
 .nav {
-    flex-grow: 6;
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 .hiddenMenu {
     display: none;
@@ -37,7 +38,6 @@
 }
 /*Contacts Block*/
 .contactsBlock {
-    flex-grow: 2;
     display: flex;
     justify-content: center;
     align-items: flex-end;

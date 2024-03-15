@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import './ServicePage.css'
+import s from './ServicePage.module.css'
 import Gallery from '../../general/Gallery/Gallery';
 
 const ServicePage = ({services}) => {
@@ -14,25 +14,42 @@ const ServicePage = ({services}) => {
   return (
     <>
       {serviceData && (
-        <div className='servicePage container'>
-          <div>
-            <h2>{serviceData.title}</h2>
-            <p>{serviceData.description}</p>
-            <ul>
-                {serviceData.whatYouWillGet.map((point, index) => (
-                  <li key={index}>{point}</li>
-                ))}
-            </ul>
-          </div>
-          <div>
-            <div className='toOrderBox'>
-              <h1>Вартість</h1>
-              <p>від {serviceData.minPrice}</p>
-              <Link to={`/order/${serviceData.id}`}>
-                Замовити послугу
-              </Link>
+        <div className={s.servicePage}>
+          <div className={s.container}>
+            <div className={s.serviceBox}>
+              <h1>{serviceData.title}</h1>
+              <div className={s.serviceDetails}>
+                <p>{serviceData.description}</p>
+                <div>
+                  <h4>З чого складається ціна</h4>
+                  <ul>
+                    {serviceData.priceExplanation.map((point, index) => (
+                      <li key={index}>{point.title} <strong>{point.price}</strong></li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4>Що ви отримаєте в результаті:</h4>
+                  <ul>
+                    {serviceData.whatYouWillGet.map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-            <Gallery photosList={serviceData.photos} />
+            <div className={s.aditionalBox}>
+              <div className={s.toOrderBox}>
+                <div className={s.orderInfo}>
+                  <h1>Вартість</h1>
+                  <p>від <strong>{serviceData.minPrice}</strong></p>
+                </div>
+                <Link to={`/order/${serviceData.id}`}>
+                  Замовити послугу
+                </Link>
+              </div>
+              <Gallery photosList={serviceData.photos} />
+            </div>
           </div>
         </div>
       )}
