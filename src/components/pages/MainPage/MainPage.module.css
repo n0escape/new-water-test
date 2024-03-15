@@ -70,12 +70,6 @@ body {
 #aboutUs .details > h1{
     font-size: 47px;
 }
-/* 
-#aboutUs .details > p{
-    font-size: ;
-} 
-*/
-
 #aboutUs .featuresBlock {
     flex: 1.2;
     display: flex;
@@ -172,7 +166,6 @@ body {
     margin-top: 40px;
 }
 .servicesList {
-    width: 100%;
     padding: 8px 60px;
     display: flex;
     flex-direction: row;
