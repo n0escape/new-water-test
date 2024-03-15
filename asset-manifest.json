@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/new-water-test/static/css/main.bf872ac5.css",
+    "main.css": "/new-water-test/static/css/main.ae9b7a11.css",
     "main.js": "/new-water-test/static/js/main.790d3882.js",
     "static/js/453.c890ed4c.chunk.js": "/new-water-test/static/js/453.c890ed4c.chunk.js",
     "index.html": "/new-water-test/index.html",
-    "main.bf872ac5.css.map": "/new-water-test/static/css/main.bf872ac5.css.map",
+    "main.ae9b7a11.css.map": "/new-water-test/static/css/main.ae9b7a11.css.map",
     "main.790d3882.js.map": "/new-water-test/static/js/main.790d3882.js.map",
     "453.c890ed4c.chunk.js.map": "/new-water-test/static/js/453.c890ed4c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf872ac5.css",
+    "static/css/main.ae9b7a11.css",
     "static/js/main.790d3882.js"
   ]
 }
