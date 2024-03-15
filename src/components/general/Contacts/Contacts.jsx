@@ -11,7 +11,7 @@ const Contacts = ({context, contacts}) => {
     });
     return (
         <div className={listClass}>
-            <div>
+            <div className={s.officesInfo}>
             {contacts.offices.map((office, index) => (
                 <p key={index}>{office.address}</p>
             ))}

@@ -1,5 +1,7 @@
 import s from './ContactForm.module.css';
-import React, { useState } from 'react';
+import React, { 
+  //useEffect, 
+  useState } from 'react';
 
 // Функция для валидации адреса электронной почты
 const validateEmail = (email) => {
@@ -11,58 +13,92 @@ const validatePhone = (phone) => {
   return /^\+380\d{9}$/.test(phone);
 };
 
+const labelMap = {
+  name: 'Ім\'я*',
+  email: 'Пошта*',
+  phone: 'Телефон*',
+  message: 'Коментар',
+  // Добавьте другие соответствия по мере необходимости
+};
+
 const ContactForm = ({ servicesList, selectedService = null }) => {
   const defaultSelectedValue = 'contactMe';
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    topic: selectedService || defaultSelectedValue
-  });
+  const initialFields = {
+    name: { value: '', class: '' },
+    email: { value: '', class: '' },
+    phone: { value: '', class: '' },
+    topic: { value: selectedService || defaultSelectedValue, class: '' },
+    message: { value: '', class: '' }
+  };
 
   const [errors, setErrors] = useState({});
+  const [formData, setFormData] = useState(initialFields);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
+  const handleChange = (name, value) => {
+    // Очищаем ошибку для поля phone и email при их изменении
+    if (name === 'phone' || name === 'email') {
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        phone: '',
+        email: ''
+      }));
+    } else if (errors[name]) {
+      // Очищаем ошибку для текущего поля при его изменении
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        [name]: ''
+      }));
+    }
+
+    setFormData(prevFields => ({
+      ...prevFields,
+      [name]: {
+        ...prevFields[name],
+        value: value,
+        class: value.trim() === '' ? '' : s.filled
+      }
     }));
   };
+
+  // useEffect(() => {
+  //   console.log(errors)
+  // }, [errors])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     let formValid = true;
 
-    if (!formData.name) {
+    if (!formData.name.value) {
       setErrors(prevErrors => ({ ...prevErrors, name: 'Please provide your name' }));
       formValid = false;
     } else {
-      setErrors(prevErrors => ({ ...prevErrors, name: '' }));
+      setErrors(prevErrors => (prevErrors.name !== '' ? ({ ...prevErrors }) : ({ ...prevErrors, name: '' })));
     }
 
-    if (!formData.email && !formData.phone) {
-      setErrors(prevErrors => ({ ...prevErrors, message: 'Please provide either email or phone number' }));
+    if (!formData.email.value && !formData.phone.value) {
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        email: 'Please provide either email or phone number',
+        phone: 'Please provide either email or phone number'
+      }));
       formValid = false;
     } else {
-      setErrors(prevErrors => ({ ...prevErrors, message: '' }));
+      setErrors(prevErrors => ( (prevErrors.email !== '' || prevErrors.email !== '') ? ({ ...prevErrors }) : ({ ...prevErrors, email: '', phone: '' })));
     }
 
-    if (formData.email && !validateEmail(formData.email)) {
+    if (formData.email.value && !validateEmail(formData.email.value)) {
       setErrors(prevErrors => ({ ...prevErrors, email: 'Please enter a valid email address' }));
       formValid = false;
     } else {
-      setErrors(prevErrors => ({ ...prevErrors, email: '' }));
+      setErrors(prevErrors => (prevErrors.email !== '' ? ({ ...prevErrors }) : ({ ...prevErrors, email: '' })));
     }
 
-    if (formData.phone && !validatePhone(formData.phone)) {
+    if (formData.phone.value && !validatePhone(formData.phone.value)) {
       setErrors(prevErrors => ({ ...prevErrors, phone: 'Please enter a valid phone number starting with +380' }));
       formValid = false;
     } else {
-      setErrors(prevErrors => ({ ...prevErrors, phone: '' }));
+      setErrors(prevErrors => (prevErrors.phone !== '' ? ({ ...prevErrors }) : ({ ...prevErrors, phone: '' })));
     }
 
     if (formValid) {
@@ -97,34 +133,55 @@ const ContactForm = ({ servicesList, selectedService = null }) => {
 
   return (
     <form onSubmit={handleSubmit} className={s.container}>
-      <label htmlFor="name">Name:</label>
-      <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required /> 
-      {errors.name && <span style={{ color: 'red' }}>{errors.name}</span>}
-
-      <label htmlFor="email">Email:</label> 
-      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} /> 
-      {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>} 
-
-      <label htmlFor="phone">Phone:</label> 
-      <input type="text" id="phone" name="phone" value={formData.phone} onChange={handleChange} /> 
-      {errors.phone && <span style={{ color: 'red' }}>{errors.phone}</span>} 
-
-      <label htmlFor="order">Choose your order...</label> 
-      <select id="topic" name="topic" value={formData.topic} onChange={handleChange}>
-        <option value="contactMe">Contact Me</option>
-        <option value="question">Question</option>
-        {servicesList.map(service => ( 
-          <option key={service.serviceId} value={service.serviceId}>{service.serviceName}</option>
-        ))}
-      </select> 
-
-      <label htmlFor="message">Message:</label> 
-      <textarea id="message" name="message" value={formData.message} onChange={handleChange}></textarea> 
-      {errors.message && <span style={{ color: 'red' }}>{errors.message}</span>} 
-
-      <input type="submit" value="Submit" />
+      {Object.entries(formData).map(([fieldName, field]) => (
+        <div key={fieldName} className={`${s.formGroup}`}>
+          {fieldName === 'topic' ? (
+            <>
+              <label 
+                htmlFor={fieldName}
+                className={`${s.topicLabel}`}
+              >
+                  Оберіть тему
+              </label>
+              <select
+                id={fieldName}
+                name={fieldName}
+                value={field.value}
+                onChange={(e) => handleChange(fieldName, e.target.value)}
+              >
+                <option value="contactMe">Зв'яжіться зі мною</option>
+                <option value="question">Задати питання</option>
+                {servicesList.map(service => ( 
+                  <option key={service.serviceId} value={service.serviceId}>{service.serviceName}</option>
+                ))}
+              </select>
+            </>
+          ) : (
+            <>
+              <input
+                type={'text'}
+                id={fieldName}
+                name={fieldName}
+                value={field.value}
+                onChange={(e) => handleChange(fieldName, e.target.value)}
+                className={`${s.inputField} ${field.class}`}
+              />
+              <label className={s.textFieldLable} htmlFor={fieldName}>
+              {labelMap[fieldName] || (fieldName.charAt(0).toUpperCase() + fieldName.slice(1))}
+              </label>
+            </>
+          )}
+          {/* Отображение ошибок */}
+          {errors[fieldName] !== '' && <span style={{ color: 'red' }}>{errors[fieldName]}</span>}
+        </div>
+      ))}
+      <div className={`${s.formGroup} ${s.submitBox}`}>
+        <input type="submit" value="Відправити" />
+      </div>
     </form>
   );
+
 }
+
 
 export default ContactForm;

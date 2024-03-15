@@ -1,26 +1,59 @@
+import React, { useState } from 'react';
 import s from './OurWorks.module.css';
-import React from 'react';
 
-const OurWorks = ({ourWorks}) => (
-    <div className={s.worksContainer}>
-        {
-            ourWorks.map( work => (
-            <div key={work.title} className={s.workItem}>
-                <div className={s.workItemContent}>
-                <div>
-                    <img src={process.env.PUBLIC_URL + work.imageSrc} alt={work.title} />
-                </div>
-                <div className={s.itemDetails}>
-                    <h3>{work.title}</h3>
-                    <b><p>{work.date !== null ? work.date : null}</p></b>
-                    <p>{work.description}</p>
-                </div>
-                </div>
-                <hr />
+const OurWorks = ({ ourWorks }) => {
+    const [visibleWorks, setVisibleWorks] = useState(4);
+    const [fade, setFade] = useState(true); // true = in, false = out
+
+    const showMoreWorks = () => {
+        setVisibleWorks(prev => prev + 2);
+        setFade(true);
+    };
+
+    const showLessWorks = () => {
+        setFade(false);
+        setTimeout(() => {
+            setVisibleWorks(4);
+        }, 1500);
+    };
+
+    return (
+        <div className={s.worksContainer}>
+            <div className={s.worksList}>
+                {ourWorks.slice(0, visibleWorks).map((work, index) => (
+                    <div key={work.title} className={`${s.workItem} ${index < 4 ? '' : (index >= 4 && fade ? s.fadeIn : s.fadeOut)}`}>
+                        <div className={s.workItemContent}>
+                            <div>
+                                <img src={process.env.PUBLIC_URL + work.imageSrc} alt={work.title} />
+                            </div>
+                            <div className={s.itemDetails}>
+                                <h3>{work.title}</h3>
+                                <b><p>{work.date !== null ? work.date : null}</p></b>
+                                <p>{work.description}</p>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+                ))}
             </div>
-            ))
-        }
-    </div>
-)
+            <div className={s.btnContainer}>
+                {ourWorks.length > visibleWorks && (
+                    <div className={s.moreBtnContainer}>
+                        <button className={s.moreBtn} onClick={showMoreWorks}>
+                            Більше
+                        </button>
+                    </div>
+                )}
+                {visibleWorks > 4 && (
+                    <div className={s.lessBtnContainer}>
+                        <button className={s.lessBtn} onClick={showLessWorks}>
+                            Згорнути
+                        </button>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
 
-export default OurWorks
+export default OurWorks;

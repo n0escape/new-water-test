@@ -1,13 +1,8 @@
 h1 {
     font-weight: bold;
     margin: 0;
+    font-size: 1.7em;
 }
-#aboutUs .details{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 
 html {
     scroll-behavior: smooth;
@@ -28,99 +23,225 @@ body {
 .anchorOurWorks {
     display: block;
     visibility: hidden;
-    height: 7vw;
-    margin-top: -7vw;
+    height: 100px;
+    margin-top: 0;
+}
+.anchorAboutUs {
+    margin-top: -100px;
 }
 
 /*About us*/
 #aboutUs {
     max-width: 100vw;
-    height: 100vh;
-    display: flex;;
+    display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
     flex-wrap: nowrap;
+    align-items: center;
+    padding: 85px 100px;
+}
+#aboutUs:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+#aboutUs > * + * {
+    margin-left: 30px; /* Значение промежутка между блоками */
 }
 #aboutUs .details {
-    border-radius: 15px;
-    border: 1px solid gray;
-    background-color: darkgray;
-    width: 40%;
-    height: 70%;
-}
-#aboutUs .featuresBlock {
+    flex: .8;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-.featuresBlock > *{
-    flex: 1;
-    margin: 10px 0;
-}
-#aboutUs .featuresContainer {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-}
-#aboutUs .featuresContainer > div {
-    width: 250px;
-    height: 120px;
-    background-color: white;
-    border: 2px solid gray;
-    border-radius: 15px;
-}
-.contactUsBtn a {
-    padding: 15px;
-    border: 2px solid darkgray;
-    background-color: gray;
-    color: black;
-    text-decoration: none;
+    text-align: center;
+    gap: 16px;
+    padding: 12px 36px 0 16px;
+
+    border: 1px solid gray;
+    background-color: darkgray;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
 }
+#aboutUs .details > *{
+    margin: 0;
+}
+#aboutUs .details > h1{
+    font-size: 47px;
+}
+/* 
+#aboutUs .details > p{
+    font-size: ;
+} 
+*/
 
-
-#services {
-    max-width: 100vw;
-    height: 100vh;
+#aboutUs .featuresBlock {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 44px;
+    gap: 40px;
+}
+#aboutUs .featuresBlock > * {
+    margin: 0;
+    flex: 1;
+}
+#aboutUs .featuresBlock .featuresSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+}
+#aboutUs .featuresBlock .featuresSection h2 {
+    margin: 0;
+}
+#aboutUs .featuresBlock .featuresSection .featuresContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#aboutUs .featuresBlock .featuresSection .featuresContainer .featureItem {
+    margin: 10px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    background-color: white; 
+}
+#aboutUs .featuresBlock .featuresSection .featuresContainer .featureItem > * {
+    flex: 1;
+    width: 100%;
+}
+#aboutUs .featuresBlock .featuresSection .featuresContainer .featureItem .header,
+#aboutUs .featuresBlock .featuresSection .featuresContainer .featureItem .info {
+    padding: 20px 5px;
+}
+#aboutUs .featuresBlock .featuresSection .featuresContainer .featureItem .header {
+    background-color: #333;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    -webkit-border-radius: 15px 15px 0 0;
+    -moz-border-radius: 15px 15px 0 0;
+    -ms-border-radius: 15px 15px 0 0;
+    -o-border-radius: 15px 15px 0 0;
+}
+#aboutUs .featuresBlock .featuresSection .featuresContainer .featureItem .info {
+    background-color: #fff;
+    color: #333;
+    border-radius: 0 0 15px 15px;
+    -webkit-border-radius: 0 0 15px 15px;
+    -moz-border-radius: 0 0 15px 15px;
+    -ms-border-radius: 0 0 15px 15px;
+    -o-border-radius: 0 0 15px 15px;
+}
+#aboutUs .featuresBlock .featuresSection .featuresContainer .featureItem .header h3,
+#aboutUs .featuresBlock .featuresSection .featuresContainer .featureItem .info p {
+    margin: 0;
+    width: 100%;
+}
+.contactUsBtn a {
+    padding: 16px;
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+#services{
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+}
+#services:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+#services > * + * {
+    margin-top: 40px;
 }
 .servicesList {
-    height: 100%;
     width: 100%;
+    padding: 8px 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-content: stretch;
     flex-wrap: wrap;
 }
-#services .servicesList > div {
-    width: 250px;
-    height: 300px;
-    border: 2px solid darkgray;
-    border-radius: 15px;
+#services .servicesList .serviceCard {
+    margin: 32px 0;
+    width: 360px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: #fff;
 
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
-#services div > a {
+#services .servicesList .serviceCard:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+#services .servicesList .serviceCard img {
+    width: 360px;
+}
+#services .servicesList .serviceCard .serviceCardInfo {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+#services .servicesList .serviceCard .serviceCardInfo * {
+    margin: 0;
+}
+#services .servicesList .serviceCard .serviceCardInfo .serviceDetails .serviceDescription {
+    margin: 12px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Ограничение количества строк */
+    -webkit-box-orient: vertical;
+}
+#services .servicesList .serviceCard .serviceCardInfo .servicePrice strong{
+    font-size: large;
+    color: #333;
+}
+#services .servicesList .serviceCard .serviceCardInfo .serviceBtn {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+#services .servicesList .serviceCard .serviceCardInfo .serviceBtn a {
+    padding: 12px;
+    width: 100%;
+    background-color: gray;
+    color: white;
     text-decoration: none;
-    padding: 10px;
-    border: 2px solid darkgray;
-    border-radius: 10px;
-    color: gray;
-    font-weight: bolder;
-    font-size: larger;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 #ourWorks {
@@ -129,6 +250,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 24px 60px;
 }
 #ourWorks:after {
     display: block;
@@ -141,26 +263,43 @@ body {
 }
 
 #contactUs {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center
-}
-
-#contacts {
     max-width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 24px 0;
+}
+#contactUs:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+#contactUs .header h2{
+    margin: 20px 0 40px 0;
+    text-align: center;
+}
+
+#contacts {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 84px;
+}
+#contacts:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+#contacts .header h2{
+    margin: 0 0 40px 0;
 }
 #contacts .contactsBox{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
 /* 

@@ -1,14 +1,19 @@
 #pageFooter {
     max-width: 100vw;
-    height: 300px;
     background-color: gray;
+    padding: 28px 60px;
+}
+#pageFooter:after {
+    display: block;
+    clear: both;
+    content: "";
 }
 
 .container {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: space-between;
 }
 .container > * {
     display: flex;

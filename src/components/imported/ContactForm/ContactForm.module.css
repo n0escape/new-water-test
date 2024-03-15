@@ -1,19 +1,88 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    align-content: center;
+.container,
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
 }
-.container > * {
-    width: 500px;
+
+.formGroup {
+  position: relative;
+  margin: 10px 0;
 }
-.container > input, textarea, select {
-    border: 2px solid gray;
-    padding: 10px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+
+.formGroup > .inputField,
+.formGroup > textarea,
+.formGroup > select {
+  font-size: 1.1em;
+  background-color: darkgray;
+  box-sizing: border-box;
+  width: 500px;
+  border: 2px solid gray;
+  padding: 10px;
+  outline: none;
+
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+
+  transition: .5s;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+}
+
+.topicLabel,
+.formGroup .textFieldLable {
+  font-size: 1.1em;
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  color: black;
+
+  transition: .5s;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+}
+
+.topicLabel,
+.formGroup .filled ~ .textFieldLable,
+.formGroup .inputField:focus ~ .textFieldLable {
+  padding: 0 10px;
+  letter-spacing: .2em;
+  font-size: 1.1em;
+  color: white;
+  background-color: gray;
+  border: 1px solid lightgray;
+  
+  transform: translateX(10px) translateY(-15px);
+  -webkit-transform: translateX(10px) translateY(-15px);
+  -moz-transform: translateX(10px) translateY(-15px);
+  -ms-transform: translateX(10px) translateY(-15px);
+  -o-transform: translateX(10px) translateY(-15px);
+  
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.formGroup > input[type="submit"] {
+  padding: 16px 60px;
+  background-color: gray;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }

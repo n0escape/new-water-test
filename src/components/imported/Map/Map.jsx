@@ -3,6 +3,7 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import classNames from 'classnames';
 
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -29,9 +30,15 @@ const MapPlaceholder = () => {
 
 const startPositionWorks = [49.0, 31.0]; // Начальное положение карты
 
-const MapTemplate = ({startPos, zoomSize, heightContainer, widthContainer, markers}) => {
+const MapTemplate = ({content, startPos, zoomSize, heightContainer, widthContainer, markers}) => {
+
+  const contextedMap = classNames(s.containerMap, {
+    [s.officeContext]: content === 'office',
+    [s.worksContext]: content === 'works',
+  });
+
   return ( 
-    <div className={s.containerMap}>
+    <div className={contextedMap}>
       {/* Убедитесь, что установлены высота и ширина контейнера карты, иначе карта не будет отображаться */}
       <MapContainer center={startPos} zoom={zoomSize} style={{height: heightContainer, width: widthContainer}} placeholder={<MapPlaceholder />}>
         <TileLayer
@@ -57,9 +64,9 @@ const MapTemplate = ({startPos, zoomSize, heightContainer, widthContainer, marke
 const MapFrame = ({content, markers}) => {
   switch (content) {
     case 'office':
-    return <MapTemplate startPos={markers[0].location} zoomSize={13} heightContainer={'400px'} widthContainer={'40vw'} markers={markers}/>
+    return <MapTemplate content={content} startPos={markers[0].location} zoomSize={13} heightContainer={'400px'} widthContainer={'40vw'} markers={markers}/>
     case 'works': 
-    return <MapTemplate startPos={startPositionWorks} zoomSize={5} heightContainer={'400px'} widthContainer={'80vw'} markers={markers}/>
+    return <MapTemplate content={content} startPos={startPositionWorks} zoomSize={5} heightContainer={'400px'} widthContainer={'80vw'} markers={markers}/>
     default: 
     return <div>Error: wrong content param in mapFrame</div>;
   }

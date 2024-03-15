@@ -19,18 +19,22 @@ const MainPage = ({aboutUs, services, ourWorks, contacts, servicesList}) => {
           <p>{aboutUs.companyDescription}</p>
         </div>
         <div className={s.featuresBlock}>
-          <div>
-            <h3>Обираючи нас ви отримаєте</h3>
-          </div>
-          <div className={s.featuresContainer}>
-            {
-              aboutUs.advantages.map( avantage => (
-                <div key={avantage.title} className='feature'>
-                  <h4>{avantage.title}</h4>
-                  <p>{avantage.description}</p>
+          <div className={s.featuresSection}>
+            <div>
+              <h2>Обираючи нас ви отримаєте</h2>
+            </div>
+            <div className={s.featuresContainer}>
+              {aboutUs.advantages.map( avantage => (
+                <div key={avantage.title} className={s.featureItem}>
+                  <div className={s.header}>
+                    <h3>{avantage.title}</h3>
+                  </div>
+                  <div className={s.info}>
+                    <p>{avantage.description}</p>
+                  </div>
                 </div>
-              ))
-            }
+              ))}
+            </div>
           </div>
           <div className={s.contactUsBtn}>
             <Link to="/#anchorContactUs">Залишити замовлення</Link>
@@ -45,15 +49,41 @@ const MainPage = ({aboutUs, services, ourWorks, contacts, servicesList}) => {
         </div>
         <div className={s.servicesList}>
           {services.map( service => (
-            <div key={service.id}>
-              <h1>{service.title}</h1>
-              <Link to={`service/${service.id}`}> Детальніше </Link>
+            <div key={service.id} className={s.serviceCard}>
+              <div>
+                <img src={process.env.PUBLIC_URL + service.photos[0]} alt={service.title}/>
+              </div>
+              <div className={s.serviceCardInfo}>
+                <div className={s.serviceDetails}>
+                  <h3>{service.title}</h3>
+                  <p className={s.serviceDescription}>{service.description}</p>
+                </div>
+                <div className={s.servicePrice}>
+                  <p>від <strong>{service.minPrice}</strong></p>
+                </div>
+                <div className={s.serviceBtn}>
+                  <Link to={`service/${service.id}`}> Детальніше </Link>
+                </div>
+              </div>
             </div>
           ))}
           {services.map( service => (
-            <div key={service.id}>
-              <h1>{service.title}</h1>
-              <Link to={`service/${service.id}`}> Детальніше </Link>
+            <div key={service.id} className={s.serviceCard}>
+              <div>
+                <img src={process.env.PUBLIC_URL + service.photos[0]} alt={service.title}/>
+              </div>
+              <div className={s.serviceCardInfo}>
+                <div className={s.serviceDetails}>
+                  <h3>{service.title}</h3>
+                  <p className={s.serviceDescription}>{service.description}</p>
+                </div>
+                <div className={s.servicePrice}>
+                  <p>від <strong>{service.minPrice}</strong></p>
+                </div>
+                <div className={s.serviceBtn}>
+                  <Link to={`service/${service.id}`}> Детальніше </Link>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -68,7 +98,7 @@ const MainPage = ({aboutUs, services, ourWorks, contacts, servicesList}) => {
 
       <div id="anchorContactUs" className={s.anchorContactUs}></div>
       <section id={s.contactUs} className={s.container}>
-        <div>
+        <div className={s.header}>
           <h1>Маєте запитання чи бажаєте замовити послугу?</h1>
           <h2>Тоді просто залиште свою заявку через форму...</h2>
         </div>
@@ -79,7 +109,7 @@ const MainPage = ({aboutUs, services, ourWorks, contacts, servicesList}) => {
 
       <div id="anchorContacts" className={s.anchorContacts}></div>
       <section id={s.contacts} className={s.container}>
-        <div>
+        <div className={s.header}>
           <h2>
             ...або зв'яжіться з нами за наступними контактами
           </h2>
