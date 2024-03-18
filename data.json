@@ -30,7 +30,7 @@
       "id": "pump-installation",
       "title": "Установка насосів",
       "minPrice": "3000грн",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla.",
       "photos": [
         "/assets/srevices/pump-installation/Media1.png",
         "/assets/srevices/pump-installation/Media2.png",
@@ -53,7 +53,52 @@
       "id": "drilling-of-the-wells",
       "title": "Буріння скважин",
       "minPrice": "2000грн",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla.",
+      "photos": [
+        "/assets/srevices/drilling-of-the-wells/Media1.png",
+        "/assets/srevices/drilling-of-the-wells/Media2.png",
+        "/assets/srevices/drilling-of-the-wells/Media3.png"
+      ],
+      "priceExplanation": [
+        {"title": "Робота:", "price": "1000грн"},
+        {"title": "Додаткові інструменти:", "price": "500грн"},
+        {"title": "Витрати на шлях:", "price": "200грн"}
+      ],
+      "whatYouWillGet": [
+        "some text point",
+        "some text point",
+        "some text point",
+        "some text point"
+      ]
+    },
+    {
+      "id": "pump-installation-1",
+      "title": "Установка насосів 1",
+      "minPrice": "3000грн",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla.",
+      "photos": [
+        "/assets/srevices/pump-installation/Media1.png",
+        "/assets/srevices/pump-installation/Media2.png",
+        "/assets/srevices/pump-installation/Media3.png"
+      ],
+      "priceExplanation": [
+        {"title": "Робота:", "price": "700грн"},
+        {"title": "Прилад:", "price": "1500грн"},
+        {"title": "Додаткові інструменти:", "price": "300грн"},
+        {"title": "Витрати на шлях:", "price": "200грн"}
+      ],
+      "whatYouWillGet": [
+        "some text point",
+        "some text point",
+        "some text point",
+        "some text point"
+      ]
+    },
+    {
+      "id": "drilling-of-the-wells-2",
+      "title": "Буріння скважин 2",
+      "minPrice": "2000грн",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla.",
       "photos": [
         "/assets/srevices/drilling-of-the-wells/Media1.png",
         "/assets/srevices/drilling-of-the-wells/Media2.png",
