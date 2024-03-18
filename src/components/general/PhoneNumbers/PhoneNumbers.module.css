@@ -1,0 +1,19 @@
+.numbersList {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    gap: 2px; /*отступ между элементами списка номеров в header*/
+}
+.contacts {
+    gap: 8px; /*отступ между элементами списка номеров в contacts*/
+}
+
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: row;
+        margin: 0 10px 0 0;
+        gap: 10px;
+    }
+}

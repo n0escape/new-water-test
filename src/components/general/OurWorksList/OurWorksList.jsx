@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import s from './OurWorks.module.css';
+import s from './OurWorksList.module.css';
 
-const OurWorks = ({ ourWorks }) => {
+const OurWorksList = ({ ourWorks }) => {
     const [visibleWorks, setVisibleWorks] = useState(4);
     const [fade, setFade] = useState(true); // true = in, false = out
 
@@ -23,13 +23,17 @@ const OurWorks = ({ ourWorks }) => {
                 {ourWorks.slice(0, visibleWorks).map((work, index) => (
                     <div key={work.title} className={`${s.workItem} ${index < 4 ? '' : (index >= 4 && fade ? s.fadeIn : s.fadeOut)}`}>
                         <div className={s.workItemContent}>
-                            <div>
+                            <div className={s.workImage}>
                                 <img src={process.env.PUBLIC_URL + work.imageSrc} alt={work.title} />
                             </div>
                             <div className={s.itemDetails}>
-                                <h3>{work.title}</h3>
-                                <b><p>{work.date !== null ? work.date : null}</p></b>
-                                <p>{work.description}</p>
+                                <div className={s.itemHeader}>
+                                    <h3>{work.title}</h3>
+                                    <b><p>{work.date !== null ? work.date : null}</p></b>
+                                </div>
+                                <div className={s.itemDescription}>
+                                    <p>{work.description}</p>
+                                </div>
                             </div>
                         </div>
                         <hr />
@@ -56,4 +60,4 @@ const OurWorks = ({ ourWorks }) => {
     );
 };
 
-export default OurWorks;
+export default OurWorksList;

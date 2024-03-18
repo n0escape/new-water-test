@@ -1,0 +1,65 @@
+.containerGallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.galleryImage {
+  height: 448px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+.galleryImage,
+.galleryImage img {
+  width: 448px;
+}
+
+.btnPrev, .btnNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.btnPrev {
+  left: 10px;
+}
+
+.btnNext {
+  right: 10px;
+}
+
+.dotList {
+  position: absolute;
+  bottom: 10px; /* расположение относительно нижнего края блока */
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #717171;
+}

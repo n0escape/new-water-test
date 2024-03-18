@@ -133,48 +133,50 @@ const ContactForm = ({ servicesList, selectedService = null }) => {
 
   return (
     <form onSubmit={handleSubmit} className={s.container}>
-      {Object.entries(formData).map(([fieldName, field]) => (
-        <div key={fieldName} className={`${s.formGroup}`}>
-          {fieldName === 'topic' ? (
-            <>
-              <label 
-                htmlFor={fieldName}
-                className={`${s.topicLabel}`}
-              >
-                  Оберіть тему
-              </label>
-              <select
-                id={fieldName}
-                name={fieldName}
-                value={field.value}
-                onChange={(e) => handleChange(fieldName, e.target.value)}
-              >
-                <option value="contactMe">Зв'яжіться зі мною</option>
-                <option value="question">Задати питання</option>
-                {servicesList.map(service => ( 
-                  <option key={service.serviceId} value={service.serviceId}>{service.serviceName}</option>
-                ))}
-              </select>
-            </>
-          ) : (
-            <>
-              <input
-                type={'text'}
-                id={fieldName}
-                name={fieldName}
-                value={field.value}
-                onChange={(e) => handleChange(fieldName, e.target.value)}
-                className={`${s.inputField} ${field.class}`}
-              />
-              <label className={s.textFieldLable} htmlFor={fieldName}>
-              {labelMap[fieldName] || (fieldName.charAt(0).toUpperCase() + fieldName.slice(1))}
-              </label>
-            </>
-          )}
-          {/* Отображение ошибок */}
-          {errors[fieldName] !== '' && <span style={{ color: 'red' }}>{errors[fieldName]}</span>}
-        </div>
-      ))}
+      <div className={s.fields}>
+        {Object.entries(formData).map(([fieldName, field]) => (
+          <div key={fieldName} className={`${s.formGroup}`}>
+            {fieldName === 'topic' ? (
+              <>
+                <label 
+                  htmlFor={fieldName}
+                  className={`${s.topicLabel}`}
+                >
+                    Оберіть тему
+                </label>
+                <select
+                  id={fieldName}
+                  name={fieldName}
+                  value={field.value}
+                  onChange={(e) => handleChange(fieldName, e.target.value)}
+                >
+                  <option value="contactMe">Зв'яжіться зі мною</option>
+                  <option value="question">Задати питання</option>
+                  {servicesList.map(service => ( 
+                    <option key={service.serviceId} value={service.serviceId}>{service.serviceName}</option>
+                  ))}
+                </select>
+              </>
+            ) : (
+              <>
+                <input
+                  type={'text'}
+                  id={fieldName}
+                  name={fieldName}
+                  value={field.value}
+                  onChange={(e) => handleChange(fieldName, e.target.value)}
+                  className={`${s.inputField} ${field.class}`}
+                />
+                <label className={s.textFieldLable} htmlFor={fieldName}>
+                {labelMap[fieldName] || (fieldName.charAt(0).toUpperCase() + fieldName.slice(1))}
+                </label>
+              </>
+            )}
+            {/* Отображение ошибок */}
+            {errors[fieldName] !== '' && <span style={{ color: 'red' }}>{errors[fieldName]}</span>}
+          </div>
+        ))}
+      </div>
       <div className={`${s.formGroup} ${s.submitBox}`}>
         <input type="submit" value="Відправити" />
       </div>

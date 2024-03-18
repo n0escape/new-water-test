@@ -1,7 +1,7 @@
 import s from './Footer.module.css'
 import SocialMedias from '../SocialMedias/SocialMedias'
 import NavLinks from '../NavLinks/NavLinks';
-import Contacts from '../Contacts/Contacts';
+import ContactsInfo from '../ContactsInfo/ContactsInfo';
 
 const Footer = ({logo, contacts}) => {
     return (
@@ -21,13 +21,16 @@ const Footer = ({logo, contacts}) => {
 
           <div className={s.contacts}>
             <h2>Контакти</h2>
-            <Contacts context={'footer'} contacts={contacts}/>
+            <ContactsInfo context={'footer'} contacts={contacts}/>
           </div>
 
           <div className={s.socialMedias}>
             <h2>Соціальні мережі</h2>
             <SocialMedias context={'footer'} socialMediasList={contacts.socialMedias} />
           </div>
+        </div>
+        <div className={s.rights}>
+          <p>© 2024 New water | All Rights Reserved</p>
         </div>
     </footer>
   )

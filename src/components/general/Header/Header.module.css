@@ -2,26 +2,39 @@
 #pageHeader {
     top: 0;
     max-width: 100vw;
-    max-height: 100px;
     background-color: lightgray;
     position: sticky;
     z-index: 1000000;
-    padding: 0 60px;
+    padding: 8px 60px; /*внутренний отступ секции*/
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
-.container {
+.mainPart {
+    height: 100%;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-content: space-between;
     align-items: center;
 }
 /*Header Logo*/
-.container > .logo {
+#pageHeader .logo {
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
+.logo a {
+    display: inline-block; /*устанавливает размер ссылки таке же как и изображение*/
+    line-height: 0;
+}
 .logo a img {
-    width: 70px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 80px;
+    height: 80px;
 }
 /*Header Links*/
 .nav {
@@ -42,50 +55,28 @@
     justify-content: center;
     align-items: flex-end;
     flex-direction: column;
+    text-wrap: nowrap;
+    font-size: .9em;
+    padding: 8px 16px 8px 8px; /*внутренний отступ блока контактов*/
+    gap: 4px; /*отступ между списком номеров и режимом работы*/
 }
 .schedule > p {
     margin: 0;
     padding: 0;
 }
 
-
-
-/* 
-@media (max-width: 950px) {
-    #pageHeader .container {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 6fr 2fr;
-    }
-    #pageHeader .container .hiddenMenu {
-        display: flex;
-    }
-    #pageHeader .container .links {
-        display: none;
-    }
-    #pageHeader .container .links ul {
+@media (max-width: 1024px) {
+    #pageHeader {
         flex-direction: column;
+        justify-content: initial;
+        padding: 16px 32px 7px 32px;
+        gap: 4px;
     }
-}
-@media (max-width: 730px) {
-    #pageHeader .container .logo a, #pageHeader .container .logo a img {
+    .logo a img {
         width: 55px;
+        height: 55px;
     }
-    #pageHeader {
-        height: 60px;
+    .contactsBlock {
+        flex-direction: row;
     }
 }
-@media (max-width: 580px) {
-    #pageHeader {
-        height: 60px;
-    }
-    #pageHeader .container .configs .hiddenLanguageBox{
-        top: 60px;
-        right: 5px;
-    }
-    #pageHeader .container .configs img{
-        width: 20px;
-    }
-} 
-*/

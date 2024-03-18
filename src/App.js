@@ -57,7 +57,7 @@ const App = () => {
         <ScrollToTop toTopIcon={data.generalIcons.toTopIcon} />
         <Header logo={data.generalIcons.logo} contacts={data.contacts}/>
         <Routes>
-          <Route exact path="/" element={<MainPage aboutUs={data.aboutUs} services={data.services} ourWorks={data.ourWorks} contacts={data.contacts} servicesList={servicesList}/>} />
+          <Route exact path="/" element={<MainPage aboutUs={data.aboutUs} services={data.services} ourWorks={data.ourWorks} servicesList={servicesList} contacts={data.contacts}/>} />
           <Route path="/service/:idFromUrl" element={<ServicePage services={data.services}/>} />
           <Route path="/order/:idService" element={<OrderPage servicesList={servicesList} />} />
           <Route path="*" element={<NotFound />} />

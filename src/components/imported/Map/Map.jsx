@@ -70,26 +70,6 @@ const MapFrame = ({content, markers}) => {
     default: 
     return <div>Error: wrong content param in mapFrame</div>;
   }
-  // return ( 
-  //   // Убедитесь, что установлены высота и ширина контейнера карты, иначе карта не будет отображаться
-  //     <MapContainer center={startPosition} zoom={13} style={{height: "50vh", width: "90vw"}} placeholder={<MapPlaceholder />}>
-  //       <TileLayer
-  //         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  //         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  //       />
-  //       {/* Дополнительные слои карты или компоненты могут быть добавлены здесь */}
-
-  //       {markersWorks.map((marker, index) => (
-  //         <Marker key={index} position={marker.position} icon={defaultIcon}>
-  //           <Popup>
-  //             <b>{marker.title}</b>
-  //             <br />
-  //             {marker.description}
-  //           </Popup>
-  //         </Marker>
-  //       ))}
-  //     </MapContainer>
-  // );
 }
 
 export default MapFrame;

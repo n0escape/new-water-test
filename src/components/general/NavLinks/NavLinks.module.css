@@ -10,10 +10,16 @@
 .row {
     width: 100%;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-evenly; /*отступ между ссылками списка в header*/
 }
 
 .column {
     flex-direction: column;
-    gap: 8px;
+    gap: 8px; /*отступ между ссылками списка в footer*/
+}
+
+@media (max-width: 1024px) {
+    .column {
+        align-items: flex-end;
+    }
 }

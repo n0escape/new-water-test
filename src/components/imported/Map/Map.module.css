@@ -1,5 +1,5 @@
 .worksContext {
-    margin: 40px 0;
+    padding: 0 24px; /*внутренний отступ карты работ*/
 }
 .officeContext {
     margin: 0;

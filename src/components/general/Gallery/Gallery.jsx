@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Gallery.css'
+import s from './Gallery.module.css'
 
 const Gallery = ({photosList}) => {
     const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
@@ -12,15 +12,15 @@ const Gallery = ({photosList}) => {
       setCurrentPhotoIndex((prevIndex) => (prevIndex === 0 ? photosList.length - 1 : prevIndex - 1));
     };
     return (
-        <div className='containerGallery'>
-            <div className='galleryImage'>
-                <button className='btnPrev' onClick={goToPrevious}>{'<'}</button>
+        <div className={s.containerGallery}>
+            <div className={s.galleryImage}>
+                <button className={s.btnPrev} onClick={goToPrevious}>{'<'}</button>
                 <img src={process.env.PUBLIC_URL + photosList[currentPhotoIndex]} alt={`Description ${currentPhotoIndex + 1}`} />
-                <button className='btnNext' onClick={goToNext}>{'>'}</button>
+                <button className={s.btnNext} onClick={goToNext}>{'>'}</button>
             </div>
-            <div className='dotList'>
+            <div className={s.dotList}>
                 {photosList.map((_, index) => (
-                <span key={index} className={index === currentPhotoIndex ? 'dot active' : 'dot'}></span>
+                <span key={index} className={index === currentPhotoIndex ? `${s.dot} ${s.active}` : s.dot}></span>
                 ))}
             </div>
         </div>

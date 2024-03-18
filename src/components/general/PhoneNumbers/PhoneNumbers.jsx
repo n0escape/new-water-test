@@ -1,7 +1,8 @@
+import classNames from 'classnames';
 import s from './PhoneNumbers.module.css';
 import React from 'react';
 
-const PhoneNumbers = ({phoneNumbersList}) => {
+const PhoneNumbers = ({context, phoneNumbersList}) => {
 
   function stylizePhoneNumber(phone) {
     // Удаление всех символов, кроме цифр
@@ -11,8 +12,13 @@ const PhoneNumbers = ({phoneNumbersList}) => {
     return formattedPhone;
   }
 
+  const listClass = classNames(s.numbersList, {
+    [s.header]: context === 'header',
+    [s.contacts]: context === 'contacts',
+  });
+
   return (
-    <ul className={s.numbersList}>
+    <ul className={listClass}>
       {phoneNumbersList.map( (phone, index) => (
         <li key={index}>
           <a href={`tel:${phone}`} target="_blank" rel="noopener noreferrer">

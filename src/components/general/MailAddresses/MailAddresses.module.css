@@ -1,0 +1,5 @@
+.mailList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /*отступ между элементами списка почт*/
+}

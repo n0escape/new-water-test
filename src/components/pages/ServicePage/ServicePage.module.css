@@ -1,41 +1,43 @@
 .servicePage {
     max-width: 100vw;
-    padding: 64px 148px;
-}
-.servicePage:after {
-    display: block;
-    clear: both;
-    content: "";
-}
-.container {
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; /*отступ между описанием и боковым блоком*/
+    padding: 64px 148px; /*внутренний отступ секции*/
 }
-.container h1 {
-    margin: 0 0 16px 0;
+.serviceBox {
+    display: flex;
+    flex-direction: column;
+    padding: 0 36px 0 24px; /*внутренний отступ описания*/
+    gap: 16px; /*отступ между заголовком и описанием*/
 }
-.container ul {
-    padding-left: 20px;
-}
-.container ul > li {
-    padding-left: 20px;
-    list-style-type: disc;
+.serviceBox h1 {
+    margin: 0;
 }
 
 .serviceDetails {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 24px;
+    gap: 24px; /*отступ между блоками текста*/
 }
 .serviceDetails p {
     margin: 0;
 }
-.serviceDetails h4 {
-    margin: 0 0 12px 0;
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /*отступ между заголовком и списком*/
+}
+.list h4 {
+    margin: 0;
+}
+.list ul {
+    padding-left: 20px;
+}
+.list ul > li {
+    padding-left: 20px;
+    list-style-type: disc;
 }
 
 .aditionalBox {
@@ -46,26 +48,25 @@
     justify-content: space-between;
 }
 .toOrderBox {
-    width: 70%;
     padding: 16px 24px;
+    width: 336px;
+    box-sizing: border-box; /*виксирует размер блока не давая padding расширять блок*/
+    gap: 40px; /*отступ между кнопкой и текстом*/
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: darkgray;
+    
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
 }
-.toOrderBox:after {
-    display: block;
-    clear: both;
-    content: "";
-}
+
 .orderInfo {
     width: 100%;
-    margin-bottom: 40px;
+    gap: 16px; /*отсутп между заголовком и ценой*/
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -79,11 +80,16 @@
 .orderInfo p strong {
     font-size: 2em;
 }
-.toOrderBox a {
+.toServicesBtn {
+    
+    width: 100%;
+    display: flex;
     text-align: center;
-    box-sizing: border-box;
-    padding: 12px;
-    width: 80%;
+    justify-content: center;
+}
+.toServicesBtn a {
+    width: 100%;
+    padding: 16px;
     background-color: gray;
     color: white;
     text-decoration: none;
@@ -95,4 +101,27 @@
 }
 .containerGallerey {
     margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .servicePage {
+        flex-direction: column;
+        justify-content: initial;
+        padding: 64px 32px; /*внутренний отступ секции*/
+        gap: 40px; /*отступ между описанием и боковым блоком*/
+    }
+    .serviceBox {
+        padding: 0 24px; /*внутренний отступ описания*/
+    }
+    .aditionalBox {
+        box-sizing: border-box;
+        padding: 0 48px;
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .orderInfo {
+        align-items: flex-start;
+    }
 }

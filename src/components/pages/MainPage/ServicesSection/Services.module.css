@@ -1,0 +1,91 @@
+#services{
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0; /*внутренний отступы секции*/
+    gap: 40px; /*отступ между заголовком и списком услуг*/
+}
+.servicesList {
+    padding: 8px 60px; /*внутренний отступ списка услуг*/
+    gap: 32px; /*отступ ТОЛЬКО между блоками услуг (сверху/снизу/слева/справа)*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.serviceCard {
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+.serviceCardInfo {
+    padding: 16px; /*внутренний отступ инфо блока услуги*/
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px; /*отступ между инфо об услуле и кнопкой заказа*/
+}
+.serviceCardInfo * {
+    margin: 0;
+}
+.serviceDetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 12px; /*отступ между заголовком, текстом, и ценой*/
+}
+.serviceDescription {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Ограничение количества строк */
+    -webkit-box-orient: vertical;
+}
+.serviceDetails strong {
+    font-size: 1.5em;
+    color: #333;
+}
+.serviceBtn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.serviceBtn a {
+    width: 100%;
+    padding: 12px 24px;
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+@media (max-width: 1024px) {
+    .servicesList {
+        padding: 8px 32px; /*внутренний отступ списка услуг*/
+        gap: 24px; /*отступ ТОЛЬКО между блоками услуг (сверху/снизу/слева/справа)*/
+    }
+    .serviceCard,
+    .serviceCard img {
+        width: 256px;
+    }
+    .serviceDescription {
+        -webkit-line-clamp: 3;
+    }
+}

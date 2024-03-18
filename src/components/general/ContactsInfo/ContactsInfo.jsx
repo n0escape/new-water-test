@@ -1,10 +1,10 @@
+import s from './ContactsInfo.module.css';
 import classNames from 'classnames';
 import MailAddresses from '../MailAddresses/MailAddresses';
 import PhoneNumbers from '../PhoneNumbers/PhoneNumbers';
-import s from './Contacts.module.css';
 import React from 'react';
 
-const Contacts = ({context, contacts}) => {
+const ContactsInfo = ({context, contacts}) => {
     const listClass = classNames(s.contactsContainer, {
         [s.contacts]: context === 'contacts',
         [s.footer]: context === 'footer',
@@ -17,7 +17,7 @@ const Contacts = ({context, contacts}) => {
             ))}
             </div>
             <div>
-                <PhoneNumbers phoneNumbersList={contacts.phoneNumbers} />
+                <PhoneNumbers context={'contacts'} phoneNumbersList={contacts.phoneNumbers} />
             </div>
             <div>
                 <MailAddresses mailAddressesList={contacts.mailAddresses} />
@@ -29,4 +29,4 @@ const Contacts = ({context, contacts}) => {
     )
 }
 
-export default Contacts
+export default ContactsInfo

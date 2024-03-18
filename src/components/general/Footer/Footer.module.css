@@ -1,29 +1,71 @@
 #pageFooter {
     max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: gray;
-    padding: 28px 60px;
+    padding: 28px 60px; /*внутренний отступ секции*/
+    gap: 60px; /*отступ между контентом и списком разрешений*/
 }
-#pageFooter:after {
-    display: block;
-    clear: both;
-    content: "";
+.rights {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
 }
-
+.rights p {
+    margin: 0;
+}
 .container {
+    padding: 0 40px; /*внутренний отступ содержимого footer*/
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; /*отступ между содержимым footer*/
 }
 .container > * {
+    flex: 1;
     display: flex;
     flex-direction: column;
-}
-
-.logo {
     align-items: flex-start;
-    flex-grow: 0;
-    width: 200px;
+    text-align: flex-start;
+    gap: 16px;
+}
+.container h2 {
+    margin: 0;
 }
 
+.logo img {
+    width: 160px;
+}
 
+@media (max-width: 1024px) {
+    #pageFooter {
+        padding: 28px 32px; /*внутренний отступ секции*/
+        gap: 32px; /*отступ между контентом и списком разрешений*/
+    }
+    .rights {
+        justify-content: initial;
+        gap: 8px;
+    }
+    .container {
+        padding: 0 24px; /*внутренний отступ содержимого footer*/
+    }
+    .container > * {
+        padding: 0 20px;
+    }
+    .logo,
+    .socialMedias {
+        align-items: center;
+        text-align: center;
+    }
+    .nav {
+        align-items: flex-end;
+        text-align: flex-end;
+    }
+    .contacts {
+        align-items: flex-start;
+        text-align: flex-start;
+    }
+}

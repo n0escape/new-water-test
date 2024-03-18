@@ -1,0 +1,41 @@
+#contacts {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 84px; /*внутренний отступ секции*/
+    gap: 40px; /*отступ между заголовком и содержимым секции*/
+}
+.header h2 {
+    margin: 0;
+}
+.contactsBox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /*отступ между картой и блоком контактов*/
+}
+.contactsList {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /*отступ между списком контактов и списком соц сетей*/
+}
+
+@media (max-width: 1024px) {
+    #contacts {
+        padding: 24px 32px; /*внутренний отступ секции*/
+        gap: 32px; /*отступ между заголовком и содержимым секции*/
+    }
+    .contactsBox {
+        flex-direction: column;
+        justify-content: initial; /*отступ между картой и блоком контактов*/
+        gap: 32px; /*отступ между списком контактов и списком соц сетей*/
+    }
+    .contactsList {
+        width: 40vw;
+        text-wrap: wrap;
+        gap: 32px; /*отступ между списком контактов и списком соц сетей*/
+    }
+}
