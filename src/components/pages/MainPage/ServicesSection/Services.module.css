@@ -106,6 +106,10 @@
 }
 
 @media (max-width: 1024px) {
+    .header h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
     .servicesList {
         padding: 8px 32px; /*внутренний отступ списка услуг*/
         gap: 24px; /*отступ ТОЛЬКО между блоками услуг (сверху/снизу/слева/справа)*/

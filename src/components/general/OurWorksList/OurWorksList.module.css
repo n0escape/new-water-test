@@ -134,4 +134,8 @@
         align-items: flex-start;
         gap: 0;
     }
+    .itemHeader h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
 }

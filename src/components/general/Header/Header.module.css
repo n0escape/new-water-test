@@ -46,13 +46,6 @@
     display: flex;
     align-items: center;
 }
-.hiddenMenu {
-    display: none;
-    font-size: larger;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-}
 /*Contacts Block*/
 .contactsBlock {
     display: flex;

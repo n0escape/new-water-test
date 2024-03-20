@@ -25,6 +25,7 @@
     gap: 24px; /*отступ между блоками текста*/
 }
 .list h4,
+.list ul > li,
 .serviceDetails p {
     margin: 0;
     font-size: 16px;
@@ -46,10 +47,6 @@
 .list ul > li {
     padding-left: 20px;
     list-style-type: disc;
-
-    font-size: 16px;
-    line-height: 22px;
-    color: #888888;
 }
 .list ul > li strong {
     font-weight: 700;
@@ -135,6 +132,12 @@
     }
     .serviceBox {
         padding: 0 24px; /*внутренний отступ описания*/
+    }
+    .serviceBox h1 {
+        font-size: 32px;
+        line-height: 40px;
+        text-align: center;
+
     }
     .aditionalBox {
         box-sizing: border-box;
