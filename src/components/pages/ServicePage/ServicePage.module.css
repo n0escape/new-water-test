@@ -13,6 +13,9 @@
 }
 .serviceBox h1 {
     margin: 0;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
 }
 
 .serviceDetails {
@@ -21,8 +24,12 @@
     flex-direction: column;
     gap: 24px; /*отступ между блоками текста*/
 }
+.list h4,
 .serviceDetails p {
     margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #888888;
 }
 .list {
     display: flex;
@@ -30,7 +37,8 @@
     gap: 12px; /*отступ между заголовком и списком*/
 }
 .list h4 {
-    margin: 0;
+    font-weight: 700;
+    color: #000000;
 }
 .list ul {
     padding-left: 20px;
@@ -38,6 +46,13 @@
 .list ul > li {
     padding-left: 20px;
     list-style-type: disc;
+
+    font-size: 16px;
+    line-height: 22px;
+    color: #888888;
+}
+.list ul > li strong {
+    font-weight: 700;
 }
 
 .aditionalBox {
@@ -55,7 +70,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: darkgray;
+    background-color: #E7E7E7;
     
     border-radius: 12px;
     -webkit-border-radius: 12px;
@@ -72,35 +87,43 @@
     align-items: flex-end;
 }
 .orderInfo h1 {
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
 }
 .orderInfo p {
     margin: 0;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
 }
 .orderInfo p strong {
-    font-size: 2em;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+
+    color: #888888;
 }
 .toServicesBtn {
-    
     width: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
 }
 .toServicesBtn a {
+    font-size: 20px;
+    line-height: 28px;
+    color: #FFFFFF;
+    background-color: #888888;
+
     width: 100%;
     padding: 16px;
-    background-color: gray;
-    color: white;
     text-decoration: none;
     border-radius: 30px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
-}
-.containerGallerey {
-    margin-top: 20px;
 }
 
 @media (max-width: 1024px) {

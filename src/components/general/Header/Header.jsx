@@ -16,7 +16,7 @@ const Header = ({logo, contacts}) => {
 
           <div className={s.nav}>
             <div className={s.hiddenMenu}>Меню</div>
-            <NavLinks direction={'row'}/>
+            <NavLinks direction={'header'}/>
           </div>
         </div>
         <div className={s.contactsBlock}>

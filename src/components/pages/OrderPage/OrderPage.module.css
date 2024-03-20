@@ -14,7 +14,13 @@
 }
 .header h1 {
     margin: 0;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
 }
 .moveBack a {
-    color: gray;
+    font-size: 20px;
+    line-height: 28px;
+    text-decoration-line: underline;
+    color: #888888;
 }

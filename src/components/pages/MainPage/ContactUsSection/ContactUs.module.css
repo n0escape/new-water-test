@@ -17,6 +17,18 @@
 .header h2 {
     margin: 0;
 }
+.header h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: #888888;
+}
+.header h2 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+}
 
 @media (max-width: 1024px) {
     #contactUs {

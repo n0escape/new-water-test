@@ -29,7 +29,8 @@ const OurWorksList = ({ ourWorks }) => {
                             <div className={s.itemDetails}>
                                 <div className={s.itemHeader}>
                                     <h3>{work.title}</h3>
-                                    <b><p>{work.date !== null ? work.date : null}</p></b>
+                                    <p className={`${s.address} ${work.address === null ? s.hidden : ''}`}>{work.address}</p>
+                                    <p className={`${s.date} ${work.date === null ? s.hidden : ''}`}>{work.date}</p>
                                 </div>
                                 <div className={s.itemDescription}>
                                     <p>{work.description}</p>

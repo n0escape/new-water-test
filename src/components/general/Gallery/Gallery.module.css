@@ -7,12 +7,12 @@
 }
 
 .galleryImage {
-  height: 448px;
+  height: 372px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: gray;
+  background-color: #E7E7E7;
 
   border-radius: 16px;
   -webkit-border-radius: 16px;
@@ -31,35 +31,30 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: black;
+  color: #000000;
   font-weight: bold;
   font-size: 24px;
   cursor: pointer;
 }
-
 .btnPrev {
   left: 10px;
 }
-
 .btnNext {
   right: 10px;
 }
-
 .dotList {
   position: absolute;
   bottom: 10px; /* расположение относительно нижнего края блока */
 }
-
 .dot {
   height: 10px;
   width: 10px;
-  background-color: #bbb;
+  background-color: #bbbbbb;
   border-radius: 50%;
   display: inline-block;
   margin: 0 5px;
   cursor: pointer;
 }
-
 .active {
   background-color: #717171;
 }

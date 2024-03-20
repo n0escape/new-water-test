@@ -15,6 +15,7 @@ const PhoneNumbers = ({context, phoneNumbersList}) => {
   const listClass = classNames(s.numbersList, {
     [s.header]: context === 'header',
     [s.contacts]: context === 'contacts',
+    [s.footer]: context === 'footer',
   });
 
   return (

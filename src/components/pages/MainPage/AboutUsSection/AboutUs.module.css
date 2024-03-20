@@ -19,20 +19,18 @@
     text-align: center;
     padding: 12px 36px 0 16px; /*внутренние отступы для блока описания компании*/
     gap: 16px; /*отступ между заголовком и текстом*/
-
-    border: 1px solid gray;
-    background-color: darkgray;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
 }
 .details > * {
     margin: 0; /*внешние отступы в заголовке и тексте блока описания*/
 }
 .details > h1{
-    font-size: 47px;
+    font-weight: 700;
+    font-size: 57px;
+    line-height: 64px;
+}
+.details p {
+    font-size: 16px;
+    line-height: 22px;
 }
 .featuresBlock {
     display: flex;
@@ -56,6 +54,9 @@
 }
 .featuresSection h2 {
     margin: 0; /*отступ заголовка в блоке особенностей*/
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
 }
 .featuresContainer {
     display: flex;
@@ -70,8 +71,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    background-color: white; 
+    text-align: center; 
 }
 .featureItem > * {
     flex: 1;
@@ -90,17 +90,15 @@
     padding: 16px 8px; /*внутренние отступы описания элемента особенностей*/
 }
 .featureItem .header {
-    background-color: #333;
-    color: #fff;
+    background-color: #D9D9D9;
     border-radius: 15px 15px 0 0;
     -webkit-border-radius: 15px 15px 0 0;
     -moz-border-radius: 15px 15px 0 0;
     -ms-border-radius: 15px 15px 0 0;
     -o-border-radius: 15px 15px 0 0;
 }
-.info {
-    background-color: #fff;
-    color: #333;
+.featureItem .info {
+    background-color: #F5F5F5;
     border-radius: 0 0 15px 15px;
     -webkit-border-radius: 0 0 15px 15px;
     -moz-border-radius: 0 0 15px 15px;
@@ -112,6 +110,18 @@
     margin: 0;
     width: 100%;
 }
+.header h3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+.info p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #888888;
+}
 .contactUsBtn {
     width: 100%;
     display: flex;
@@ -120,10 +130,13 @@
     justify-content: center;
 }
 .contactUsBtn a {
+    font-size: 20px;
+    line-height: 28px;
+    color: #FFFFFF;
+    background-color: #888888;
+
     padding: 16px; /*внетренние отступы внутри кнопки*/
     text-align: center;
-    background-color: gray;
-    color: white;
     text-decoration: none;
     border-radius: 30px;
     -webkit-border-radius: 30px;

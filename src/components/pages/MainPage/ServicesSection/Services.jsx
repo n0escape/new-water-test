@@ -2,8 +2,8 @@ import s from './Services.module.css'
 import { Link } from "react-router-dom"
 
 const Services = ({services}) => (
-    <section id={s.services} className={s.container}>
-        <div>
+    <section id={s.services}>
+        <div className={s.header}>
           <h1>Послуги</h1>
         </div>
         <div className={s.servicesList}>
@@ -16,7 +16,7 @@ const Services = ({services}) => (
                 <div className={s.serviceDetails}>
                   <h3>{service.title}</h3>
                   <p className={s.serviceDescription}>{service.description}</p>
-                  <p>від <strong>{service.minPrice}</strong></p>
+                  <p className={s.minPrice}>від <strong>{service.minPrice}</strong></p>
                 </div>
                 <div className={s.serviceBtn}>
                   <Link to={`service/${service.id}`}> Детальніше </Link>

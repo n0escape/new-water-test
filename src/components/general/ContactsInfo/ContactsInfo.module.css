@@ -2,21 +2,34 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    text-align: end;
     gap: 32px; /*отступ между элементами списка контактов*/
 }
 .contactsContainer * {
     margin: 0;
+    color: #888888;
 }
-.contacts a {
-    font-size: .9em;
+.officesInfo p {
+    font-size: 28px;
+    line-height: 36px;
 }
-.contacts {
-    font-size: 1.5em;
+.schedule p {
+    font-size: 24px;
+    line-height: 32px;
 }
 
 .footer {
+    text-align: start;
     align-items: flex-start;
     gap: 12px; /*отступ между ссылками списка в footer*/
+}
+.footer * {
+    color: #000000
+}
+.footer .officesInfo p,
+.footer .schedule p {
+    font-size: 16px;
+    line-height: 24px;
 }
 
 @media (max-width: 1024px) {

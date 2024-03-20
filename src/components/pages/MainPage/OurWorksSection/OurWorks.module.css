@@ -10,6 +10,10 @@
 #ourWorks h1{
     display: flex;
     justify-content: center;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
 }
 
 @media (max-width: 1024px) {

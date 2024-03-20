@@ -3,9 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: gray;
+    background-color: #D9D9D9;
     padding: 28px 60px; /*внутренний отступ секции*/
     gap: 60px; /*отступ между контентом и списком разрешений*/
+}
+#pageFooter * {
+    color: #888888;
 }
 .rights {
     display: flex;
@@ -16,24 +19,35 @@
 }
 .rights p {
     margin: 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
 }
 .container {
     padding: 0 40px; /*внутренний отступ содержимого footer*/
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between; /*отступ между содержимым footer*/
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 32px 24px;
+
 }
 .container > * {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: flex-start;
+    text-align: start;
     gap: 16px;
 }
 .container h2 {
     margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
 }
 
 .logo img {
@@ -62,10 +76,10 @@
     }
     .nav {
         align-items: flex-end;
-        text-align: flex-end;
+        text-align: end;
     }
     .contacts {
         align-items: flex-start;
-        text-align: flex-start;
+        text-align: start;
     }
 }

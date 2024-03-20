@@ -15,24 +15,31 @@
 }
 .formGroup {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .formGroup > .inputField,
 .formGroup > textarea,
 .formGroup > select {
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #888888;
+  background-color: #D9D9D9;
+  border: 2px solid #888888;
+  box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.25);
+
   padding: 12px 16px; /*внутренний отступ всех полей ввода*/
-  width: 500px; /*ширина всех полей ввода*/
-  font-size: 1.1em;
-  background-color: darkgray;
+  width: 500px; /* ширина всех полей ввода*/
   box-sizing: border-box;
-  border: 2px solid gray;
   outline: none;
 
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 
   transition: .5s;
   -webkit-transition: .5s;
@@ -46,12 +53,16 @@
 
 .topicLabel,
 .formGroup .textFieldLable {
-  padding: 10px; /*внутренний отступ у всех label*/
-  font-size: 1.1em;
+  font-size: 16px;
+  line-height: 24px;
+  color: #888888;
+
   left: 0;
+  padding: 10px 15px; /*внутренний отступ у всех label*/
+
   position: absolute;
   pointer-events: none;
-  color: black;
+  box-sizing: border-box;
 
   transition: .5s;
   -webkit-transition: .5s;
@@ -65,29 +76,36 @@
 .formGroup .inputField:focus ~ .textFieldLable {
   padding: 0 10px; /*внутренний отступ label (при активации поля)*/
   letter-spacing: .2em;
-  font-size: 1.1em;
+
   color: white;
-  background-color: gray;
-  border: 1px solid lightgray;
-  
-  transform: translateX(10px) translateY(-15px);
-  -webkit-transform: translateX(10px) translateY(-15px);
-  -moz-transform: translateX(10px) translateY(-15px);
-  -ms-transform: translateX(10px) translateY(-15px);
-  -o-transform: translateX(10px) translateY(-15px);
-  
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  background-color: #888888;
+  border: 1px solid #888888;
+
+  transform: translateX(10px) translateY(-25px);
+  -webkit-transform: translateX(10px) translateY(-25px);
+  -moz-transform: translateX(10px) translateY(-25px);
+  -ms-transform: translateX(10px) translateY(-25px);
+  -o-transform: translateX(10px) translateY(-25px);
+}
+
+.formGroup  > select:focus-within{
+  border-radius: 8px 8px 0 0;
+  -webkit-border-radius: 8px 8px 0 0;
+  -moz-border-radius: 8px 8px 0 0;
+  -ms-border-radius: 8px 8px 0 0;
+  -o-border-radius: 8px 8px 0 0;
 }
 
 .formGroup > input[type="submit"] {
+  font-size: 20px;
+  line-height: 28px;
+
+  color: #FFFFFF;
+  background-color: #888888;
+  border: 1px solid #888888;
+
   padding: 16px 60px; /*внутренний отступ кнопки*/
-  background-color: gray;
-  color: white;
-  text-decoration: none;
+
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;

@@ -9,6 +9,11 @@
 }
 .header h2 {
     margin: 0;
+
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
 }
 .contactsBox {
     width: 100%;

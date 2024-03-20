@@ -17,12 +17,12 @@ const ContactsInfo = ({context, contacts}) => {
             ))}
             </div>
             <div>
-                <PhoneNumbers context={'contacts'} phoneNumbersList={contacts.phoneNumbers} />
+                <PhoneNumbers context={context} phoneNumbersList={contacts.phoneNumbers} />
             </div>
             <div>
-                <MailAddresses mailAddressesList={contacts.mailAddresses} />
+                <MailAddresses context={context} mailAddressesList={contacts.mailAddresses} />
             </div>
-            <div>
+            <div className={s.schedule}>
                 <p>{contacts.schedule}</p>
             </div>
         </div>

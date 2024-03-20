@@ -6,14 +6,28 @@
 .header {
     gap: 2px; /*отступ между элементами списка номеров в header*/
 }
+.header li a {
+    font-size: 16px;
+    line-height: 22px;
+}
 .contacts {
     gap: 8px; /*отступ между элементами списка номеров в contacts*/
+}
+.contacts li a {
+    font-size: 24px;
+    line-height: 28px;
+}
+.footer {
+    gap: 4px; /*отступ между элементами списка номеров в contacts*/
+}
+.footer li a {
+    font-size: 16px;
+    line-height: 24px;
 }
 
 @media (max-width: 1024px) {
     .header {
         flex-direction: row;
-        margin: 0 10px 0 0;
-        gap: 10px;
+        gap: 16px; /*отступ между элементами списка номеров в header*/
     }
 }

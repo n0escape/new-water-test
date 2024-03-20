@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const NavLinks = ({direction}) => {
     const linksClass = classNames(s.links, {
-        [s.row]: direction === 'row',
-        [s.column]: direction === 'column',
+        [s.header]: direction === 'header',
+        [s.footer]: direction === 'footer',
     });
 
     return (
