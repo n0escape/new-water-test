@@ -1,7 +1,8 @@
 {
   "generalIcons": {
     "logo": "/assets/general/logo-template.png",
-    "toTopIcon": "/assets/general/pageUp.png"
+    "toTopIcon": "/assets/general/pageUp.png",
+    "callIcon": "/assets/general/call.png"
   },
   "aboutUs": {
     "companyName": "New Water",
@@ -28,7 +29,7 @@
   "services": [
     {
       "id": "pump-installation",
-      "title": "Установка насосів",
+      "title": "Установка насосів 111",
       "minPrice": "3000грн",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur, mi vitae mattis pulvinar, sem metus tincidunt arcu, venenatis semper ante urna ac est. Proin in lacus eu mauris pretium scelerisque a vel nibh. Aliquam tortor odio, consectetur nec justo nec, eleifend fringilla nulla.",
       "photos": [
