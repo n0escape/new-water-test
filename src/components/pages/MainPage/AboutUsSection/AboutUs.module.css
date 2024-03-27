@@ -2,7 +2,7 @@
     max-width: 100vw;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 84px 148px; /*внутренние отступы секции*/
@@ -17,6 +17,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    box-sizing: border-box;
     padding: 12px 36px 0 16px; /*внутренние отступы для блока описания компании*/
     gap: 16px; /*отступ между заголовком и текстом*/
 }
@@ -24,6 +25,7 @@
     margin: 0; /*внешние отступы в заголовке и тексте блока описания*/
 }
 .details > h1{
+    text-wrap: nowrap;
     font-weight: 700;
     font-size: 57px;
     line-height: 64px;
@@ -64,7 +66,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    gap: 24px; /*отступ ТОЛЬКО между элементами особенностей (сверху/снизу/справа/слева)*/
+    gap: 28px 24px; /*отступ ТОЛЬКО между элементами особенностей (сверху/снизу/справа/слева)*/
 }
 .featureItem {
     max-width: 224px; /*ширина элемента особенностей*/
@@ -145,19 +147,44 @@
     -o-border-radius: 30px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     #aboutUs {
         padding: 48px 64px 32px 64px;
-        gap: 48px;
+        gap: 40px 48px;
     }
     .featuresBlock {
         margin-top: 0; /*внешний отступ перед блоком особенностей*/
     }
-    .featuresContainer {
-        flex-direction: column;
-        gap: 28px; /*отступ ТОЛЬКО между элементами особенностей (сверху/снизу/справа/слева)*/
+    .featuresSection h2 {
+        text-wrap: nowrap;
     }
     .featuresBlock {
         margin: 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    #aboutUs {
+        flex-direction: column;
+        padding: 24px 16px 16px 16px;
+        gap: 36px;
+    }
+    #aboutUs > * {
+        flex: auto;
+        box-sizing: border-box;
+    }
+    .details {
+        padding: 0px 16px;
+    }
+    .details h1 {
+        font-size: 48px;
+        line-height: 64px;
+    }
+    .featuresSection h2 {
+        font-size: 24px;
+        line-height: 32px;
+        text-wrap: wrap;
+    }
+    .contactUsBtn a {
+        width: 80%;
     }
 }

@@ -4,7 +4,7 @@ import SocialMedias from '../../../general/SocialMedias/SocialMedias'
 import s from './Contacts.module.css'
 
 const Contacts = ({contacts}) => (
-    <section id={s.contacts} className={s.container}>
+    <section id={s.contacts}>
         <div className={s.header}>
           <h2>
             ...або зв'яжіться з нами за наступними контактами

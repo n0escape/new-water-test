@@ -12,16 +12,12 @@ const ContactsInfo = ({context, contacts}) => {
     return (
         <div className={listClass}>
             <div className={s.officesInfo}>
-            {contacts.offices.map((office, index) => (
-                <p key={index}>{office.address}</p>
-            ))}
+                {contacts.offices.map((office, index) => (
+                    <p key={index}>{office.address}</p>
+                ))}
             </div>
-            <div>
-                <PhoneNumbers context={context} phoneNumbersList={contacts.phoneNumbers} />
-            </div>
-            <div>
-                <MailAddresses context={context} mailAddressesList={contacts.mailAddresses} />
-            </div>
+            <PhoneNumbers context={context} phoneNumbersList={contacts.phoneNumbers} />
+            <MailAddresses context={context} mailAddressesList={contacts.mailAddresses} />
             <div className={s.schedule}>
                 <p>{contacts.schedule}</p>
             </div>

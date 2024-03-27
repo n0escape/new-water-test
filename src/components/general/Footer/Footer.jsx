@@ -16,7 +16,7 @@ const Footer = ({logo, contacts}) => {
 
           <div className={s.nav}>
             <h2>Навігація</h2>
-            <NavLinks direction={'footer'}/>
+            <NavLinks context={'footer'}/>
           </div>
 
           <div className={s.contacts}>

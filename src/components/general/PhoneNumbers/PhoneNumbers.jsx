@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import s from './PhoneNumbers.module.css';
 import React from 'react';
 
-const PhoneNumbers = ({context, phoneNumbersList}) => {
+const PhoneNumbers = ({context, phoneNumbersList, toggleContacts}) => {
 
   function stylizePhoneNumber(phone) {
     // Удаление всех символов, кроме цифр
@@ -18,11 +18,13 @@ const PhoneNumbers = ({context, phoneNumbersList}) => {
     [s.footer]: context === 'footer',
   });
 
+  const handleClick = () => toggleContacts && toggleContacts()
+
   return (
     <ul className={listClass}>
       {phoneNumbersList.map( (phone, index) => (
         <li key={index}>
-          <a href={`tel:${phone}`} target="_blank" rel="noopener noreferrer">
+          <a href={`tel:${phone}`} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
             {stylizePhoneNumber(phone)}
           </a>
         </li>

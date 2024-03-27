@@ -14,8 +14,10 @@ const Services = ({services}) => (
               </div>
               <div className={s.serviceCardInfo}>
                 <div className={s.serviceDetails}>
-                  <h3>{service.title}</h3>
-                  <p className={s.serviceDescription}>{service.description}</p>
+                  <div className={s.serviceText}>
+                    <h3>{service.title}</h3>
+                    <p className={s.serviceDescription}>{service.description}</p>
+                  </div>
                   <p className={s.minPrice}>від <strong>{service.minPrice}</strong></p>
                 </div>
                 <div className={s.serviceBtn}>

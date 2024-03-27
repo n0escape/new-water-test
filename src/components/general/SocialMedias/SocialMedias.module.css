@@ -30,7 +30,7 @@
     width: 32px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .smList {
         justify-content: center;
     }
@@ -39,5 +39,10 @@
     }
     .footer img {
         width: 32px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .contacts img {
+        width: 28px;
     }
 }

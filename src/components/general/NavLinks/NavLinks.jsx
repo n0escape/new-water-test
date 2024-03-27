@@ -3,25 +3,25 @@ import classNames from 'classnames';
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const NavLinks = ({direction}) => {
+const NavLinks = ({context, toggleNav}) => {
     const linksClass = classNames(s.links, {
-        [s.header]: direction === 'header',
-        [s.footer]: direction === 'footer',
+        [s.header]: context === 'header',
+        [s.footer]: context === 'footer',
     });
 
     return (
         <ul className={linksClass}>
             <li>
-                <Link to="/#anchorAboutUs">Про компанію</Link>
+                <Link to="/#anchorAboutUs" onClick={ () => toggleNav && toggleNav() }>Про компанію</Link>
             </li>
             <li>
-                <Link to="/#anchorServices">Послуги</Link>
+                <Link to="/#anchorServices" onClick={ () => toggleNav && toggleNav() }>Послуги</Link>
             </li>
             <li>
-                <Link to="/#anchorOurWorks">Наші роботи</Link>
+                <Link to="/#anchorOurWorks" onClick={ () => toggleNav && toggleNav() }>Наші роботи</Link>
             </li>
             <li>
-                <Link to="/#anchorContacts">Контакти</Link>
+                <Link to="/#anchorContacts" onClick={ () => toggleNav && toggleNav() }>Контакти</Link>
             </li>
         </ul>
     )

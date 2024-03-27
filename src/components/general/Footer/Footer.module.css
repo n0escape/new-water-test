@@ -11,9 +11,11 @@
     color: #888888;
 }
 .rights {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    box-sizing: border-box;
     justify-content: space-between;
     padding: 0 24px;
 }
@@ -29,6 +31,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    box-sizing: border-box;
     justify-content: space-between; /*отступ между содержимым footer*/
     align-items: flex-start;
     align-content: flex-start;
@@ -54,13 +57,14 @@
     width: 160px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     #pageFooter {
         padding: 28px 32px; /*внутренний отступ секции*/
         gap: 32px; /*отступ между контентом и списком разрешений*/
     }
     .rights {
-        justify-content: initial;
+        flex-direction: column;
+        justify-content: center;
         gap: 8px;
     }
     .container {
@@ -82,4 +86,36 @@
         align-items: flex-start;
         text-align: start;
     }
+}
+@media screen and (max-width: 600px) {
+    #pageFooter {
+        padding: 28px 16px; /*внутренний отступ секции*/
+        gap: 40px; /*отступ между контентом и списком разрешений*/
+    }
+    .rights {
+        gap: 4px;
+    }
+    .container {
+        justify-content: center; /* Изменено на center */
+        align-items: center;
+        align-content: center;
+        padding: 0px 20px; /*внутренний отступ содержимого footer*/
+        gap: 28px 60px;
+    }
+    .container > div {
+        flex: none;
+        padding: 0;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+    .container > div:nth-child(2),
+    .container > div:nth-child(3) {
+        width: 40%;
+    }
+    .container > div:nth-child(4) {
+        gap: 16px;
+    }
+    
 }

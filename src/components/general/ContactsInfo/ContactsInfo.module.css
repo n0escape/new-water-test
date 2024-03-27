@@ -32,7 +32,7 @@
     line-height: 24px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .contactsContainer{
         align-items: center; 
         text-align: center;
@@ -42,5 +42,26 @@
         align-items: flex-start;
         text-align: start;
         gap: 12px; /*отступ между ссылками списка в footer*/
+    }
+}
+@media screen and (max-width: 1024px) {
+    .contactsContainer {
+        gap: 8px; /*отступ между элементами списка контактов*/
+    }
+    .contactsContainer * {
+        text-wrap: wrap;
+    }
+    .contacts .officesInfo p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .contacts .schedule p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .footer {
+        align-items: center;
+        text-align: center;
+        gap: 6px; /*отступ между ссылками списка в footer*/
     }
 }

@@ -36,13 +36,17 @@
     padding: 24px 0; /*внутренний отступ блока работы*/
 }
 .workImage {
+    width: 100%;
     display: flex;
-    justify-content: center;
+}
+.workImage img {
+    width: 425px;
 }
 .itemDetails {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    text-align: end;
     justify-content: space-between; /*отступ между заголовком и описанием*/
     padding: 16px 0; /*внутренний отступ инфо о работе*/
 }
@@ -56,10 +60,10 @@
 .itemHeader {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     gap: 4px; /*отступ между элементами заголовка*/
 }
 .itemHeader h3 {
+    text-wrap: nowrap;
     font-weight: 600;
     font-size: 28px;
     line-height: 36px;
@@ -122,20 +126,57 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .workItemContent {
         flex-direction: column;
     }
+    .workImage img {
+        width: 300px;
+    }
     .itemDetails {
         align-items: flex-start;
-        gap: 8px;
+        gap: 8px; /*отступ между заголовком и описанием */
     }
     .itemHeader {
         align-items: flex-start;
-        gap: 0;
+        gap: 0; /*отступ между элементами заголовка*/
     }
     .itemHeader h3 {
         font-size: 24px;
         line-height: 30px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .worksContainer {
+        gap: 20px; /*отступ между кнопкой и списком работ*/
+    }
+    .worksList {
+        padding: 0 16px; /*внутренний отступ списка работ*/
+    }
+    .workItemContent {
+        padding: 12px 0; /*внутренний отступ блока работы*/
+    }
+    .workImage {
+        justify-content: center;
+    }
+    .workImage img {
+        width: 256px;
+    }
+    .itemDetails {
+        align-items: center;
+        gap: 4px; /*отступ между заголовком и описанием */
+    }
+    .itemHeader {
+        align-items: center;
+    }
+    .itemHeader h3 {
+        text-wrap: wrap;
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .itemHeader p{
+        margin-top: -2px; /*отступ между элементами заголовка (костыль)*/
+        font-size: 16px;
+        line-height: 24px;
     }
 }

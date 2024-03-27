@@ -7,14 +7,14 @@ const OrderPage = ({servicesList}) => {
     
     return (
         <div className={s.orderPage}>
-            <div className={s.orderPageContent}>
-                <div className={s.header}>
-                    <h1>Замовити послугу</h1>
-                </div>
-                <ContactForm servicesList={servicesList} selectedService={idService} />
+            <div className={s.header}>
+                <h1>Замовити послугу</h1>
             </div>
-            <div className={s.moveBack}>
-                <Link to="/#anchorServices">Повернутись до списку послуг</Link>
+            <div className={s.orderPageContent}>
+                <ContactForm servicesList={servicesList} selectedService={idService} />
+                <div className={s.moveBack}>
+                    <Link to="/#anchorServices">Повернутись до списку послуг</Link>
+                </div>
             </div>
         </div>
     )

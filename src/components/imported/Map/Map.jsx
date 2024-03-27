@@ -30,17 +30,21 @@ const MapPlaceholder = () => {
 
 const startPositionWorks = [49.0, 31.0]; // Начальное положение карты
 
-const MapTemplate = ({content, startPos, zoomSize, heightContainer, widthContainer, markers}) => {
+const MapTemplate = ({content, startPos, zoomSize, markers}) => {
 
-  const contextedMap = classNames(s.containerMap, {
+  const contextedMapContainer = classNames(s.containerMap, {
     [s.officeContext]: content === 'office',
     [s.worksContext]: content === 'works',
   });
+  const contextedMap = classNames( {
+    [s.mapOffice]: content === 'office',
+    [s.mapWorks]: content === 'works',
+  });
 
   return ( 
-    <div className={contextedMap}>
+    <div className={contextedMapContainer}>
       {/* Убедитесь, что установлены высота и ширина контейнера карты, иначе карта не будет отображаться */}
-      <MapContainer center={startPos} zoom={zoomSize} style={{height: heightContainer, width: widthContainer}} placeholder={<MapPlaceholder />}>
+      <MapContainer className={contextedMap} center={startPos} zoom={zoomSize} placeholder={<MapPlaceholder />}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -63,10 +67,10 @@ const MapTemplate = ({content, startPos, zoomSize, heightContainer, widthContain
 
 const MapFrame = ({content, markers}) => {
   switch (content) {
-    case 'office':
-    return <MapTemplate content={content} startPos={markers[0].location} zoomSize={13} heightContainer={'400px'} widthContainer={'40vw'} markers={markers}/>
     case 'works': 
-    return <MapTemplate content={content} startPos={startPositionWorks} zoomSize={5} heightContainer={'400px'} widthContainer={'80vw'} markers={markers}/>
+    return <MapTemplate content={content} startPos={startPositionWorks} zoomSize={5}  markers={markers}/>
+    case 'office':
+    return <MapTemplate content={content} startPos={markers[0].location} zoomSize={13} markers={markers}/>
     default: 
     return <div>Error: wrong content param in mapFrame</div>;
   }

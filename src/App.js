@@ -55,7 +55,7 @@ const App = () => {
       <Router basename={basePath}>
         <ScrollToHash />
         <ScrollToTop toTopIcon={data.generalIcons.toTopIcon} />
-        <Header logo={data.generalIcons.logo} contacts={data.contacts}/>
+        <Header logo={data.generalIcons.logo} contactsIcon={data.generalIcons.callIcon} contacts={data.contacts}/>
         <Routes>
           <Route exact path="/" element={<MainPage aboutUs={data.aboutUs} services={data.services} ourWorks={data.ourWorks} servicesList={servicesList} contacts={data.contacts}/>} />
           <Route path="/service/:idFromUrl" element={<ServicePage services={data.services}/>} />

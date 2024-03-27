@@ -123,7 +123,7 @@
     -o-border-radius: 30px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .servicePage {
         flex-direction: column;
         justify-content: initial;
@@ -149,5 +149,55 @@
     }
     .orderInfo {
         align-items: flex-start;
+    }
+}
+@media screen and (max-width: 600px) {
+    .servicePage {
+        padding: 16px; /*внутренний отступ секции*/
+        gap: 28px; /*отступ между описанием и боковым блоком*/
+    }
+    .serviceBox {
+        padding: 0px 36px 0px 24px; /*внутренний отступ описания*/
+        gap: 16px;
+
+    }
+    .serviceBox h1 {
+        font-size: 28px;
+        line-height: 44px;
+    }
+
+
+    .aditionalBox {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        gap: 28px;
+    }
+    .toOrderBox {
+        width: 100%;
+        padding: 16px;
+        gap: 12px; /*отступ между текстом и кнопкой*/
+    }
+    .orderInfo {
+        align-items: center;
+        text-align: center;
+        padding: 0 4px;
+        gap: 4px;
+    }
+    .orderInfo h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .orderInfo p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .orderInfo strong {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .toServicesBtn a {
+        padding: 12px 16px;
     }
 }

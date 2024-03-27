@@ -29,7 +29,7 @@
     gap: 32px; /*отступ между списком контактов и списком соц сетей*/
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     #contacts {
         padding: 24px 32px; /*внутренний отступ секции*/
         gap: 32px; /*отступ между заголовком и содержимым секции*/
@@ -44,8 +44,22 @@
         gap: 32px; /*отступ между списком контактов и списком соц сетей*/
     }
     .contactsList {
-        width: 40vw;
         text-wrap: wrap;
         gap: 32px; /*отступ между списком контактов и списком соц сетей*/
+    }
+}
+@media screen and (max-width: 600px) {
+    #contacts {
+        gap: 20px; /*отступ между заголовком и содержимым секции*/
+    }
+    .header h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .contactsBox {
+        gap: 16px; /*отступ между картой и блоком контактов*/
+    }
+    .contactsList {
+        gap: 8px; /*отступ между списком контактов и списком соц сетей*/
     }
 }

@@ -27,3 +27,13 @@ body {
 .anchorAboutUs {
     margin-top: -100px;
 }
+@media screen and (max-width: 600px) {
+    .anchorAboutUs, .anchorServices, 
+    .anchorContacts, .anchorContactUs,
+    .anchorOurWorks {
+        height: 60px;
+    }
+    .anchorAboutUs {
+        margin-top: -60px;
+    }
+}
